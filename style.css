@@ -274,11 +274,6 @@
 
 }
 
-.hidden{
-
-    display:none;
-
-}
 
 .game-container{
 
@@ -391,7 +386,7 @@
     cursor:pointer;
 
     transition:.25s;
-
+    animation:appear .25s ease;
 }
 
 .cell:hover{
@@ -602,6 +597,7 @@
 
     box-shadow:
     0 0 30px rgba(255,23,68,.6);
+    animation:popup .35s ease;
 
 }
 
@@ -661,34 +657,6 @@
 
 }
 
-#win-line{
-
-    position:absolute;
-
-    height:6px;
-
-    width:0;
-
-    background:#ff1744;
-
-    box-shadow:
-    0 0 10px #ff1744,
-    0 0 25px #ff1744;
-
-    border-radius:20px;
-
-    transition:width .4s ease;
-
-    display:none;
-
-}
-
-.cell{
-
-    animation:appear .25s ease;
-
-}
-
 @keyframes appear{
 
     from{
@@ -727,12 +695,6 @@
     transition:width .4s ease;
 
 }
-.popup-card{
-
-    animation:popup .35s ease;
-
-}
-
 @keyframes popup{
 
     from{
@@ -813,23 +775,39 @@
     color:#fff;
     text-shadow:0 0 10px #ff1744;
 }
-.footer{
-    margin-top:100px;
+/* 
+   RESPONSIVE DESIGN
+ */
+
+/* --- Large Tablets & Small Laptops --- */
+
+@media (max-width:1024px){
+
+    .friend-card{
+        width:90%;
+        max-width:680px;
+    }
+
+    .game-top{
+        width:90%;
+    }
+
 }
 
 
-/* RESPONSIVE DESIGN*/
-
-
 /* ---------- Tablets ---------- */
+
 @media (max-width:768px){
 
-    .logo{
-        font-size:22px;
+    .mode-card{
+        width:90%;
+        max-width:320px;
+        padding:30px;
     }
 
     .friend-card{
         width:90%;
+        max-width:500px;
     }
 
     .game-top{
@@ -840,6 +818,10 @@
 
     .game-info{
         text-align:center;
+    }
+
+    .game-info h2{
+        font-size:28px;
     }
 
     .board{
@@ -858,32 +840,42 @@
         height:320px;
     }
 
-    .loading-bar{
-        width:90%;
-    }
-
     .scoreboard{
-        gap:40px;
+        gap:50px;
         font-size:18px;
     }
 
     .scoreboard span{
-        font-size:28px;
+        font-size:30px;
+    }
+
+    .loading-title{
+        font-size:34px;
+        text-align:center;
+    }
+
+    .loading-text{
+        font-size:14px;
+        text-align:center;
+    }
+
+    .loading-bar{
+        width:90%;
+        max-width:400px;
     }
 
     .popup-card{
         width:90%;
+        max-width:420px;
         padding:30px;
     }
 
 }
 
-/* ---------- Mobile ---------- */
-@media (max-width:480px){
 
-    .logo{
-        font-size:18px;
-    }
+/* ---------- Mobile ---------- */
+
+@media (max-width:480px){
 
     .mode-card{
         width:90%;
@@ -892,6 +884,14 @@
 
     .friend-card{
         width:90%;
+    }
+
+    .mode-card h2{
+        font-size:28px;
+    }
+
+    .mode-card p{
+        font-size:14px;
     }
 
     .board{
@@ -910,36 +910,79 @@
         height:256px;
     }
 
-    .loading-title{
-        font-size:28px;
-        text-align:center;
-    }
-
-    .loading-text{
-        font-size:12px;
-        text-align:center;
-    }
-
-    .loading-bar{
-        width:90%;
-    }
-
     .game-info h2{
-        font-size:24px;
+        font-size:22px;
+    }
+
+    .game-info p{
+        font-size:14px;
     }
 
     .scoreboard{
         gap:25px;
-        font-size:16px;
+        font-size:15px;
     }
 
     .scoreboard span{
-        font-size:24px;
+        font-size:22px;
+    }
+
+    .loading-title{
+        font-size:26px;
+    }
+
+    .loading-text{
+        font-size:12px;
+        letter-spacing:2px;
     }
 
     .popup-card{
-        width:90%;
-        padding:20px;
+        width:92%;
+        padding:22px;
+    }
+
+    .popup-card h2{
+        font-size:28px;
+    }
+
+    .popup-buttons{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .popup-buttons button{
+        width:100%;
+    }
+
+}
+
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width:360px){
+
+    .board{
+        grid-template-columns:repeat(3,70px);
+        gap:6px;
+    }
+
+    .cell{
+        width:70px;
+        height:70px;
+        font-size:28px;
+    }
+
+    .board-wrapper{
+        width:222px;
+        height:222px;
+    }
+
+    .scoreboard{
+        gap:18px;
+    }
+
+    .loading-title{
+        font-size:22px;
     }
 
 }

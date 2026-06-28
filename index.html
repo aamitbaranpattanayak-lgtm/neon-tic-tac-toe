@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Neon Tic Tac Toe</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"  href ="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header class="flex justify-between items-center p-4 w-full bg-black text-white border-b border-red-900">
+        <div class="flex gap-3 items-center">
+         <span class="red-dot"></span>
+         <h1 class="logo text-3xl font-bold uppercase tracking-wide">System://NEON_GRID</h1>
+        </div>
+        
+        <div class="flex items-center gap-6">
+        <button id="audio-btn" class="flex
+        items-center
+        gap-3
+        px-5
+        py-2
+        font-semibold
+        tracking-wide
+        shadow-[0_0_12px_rgba(239,68,68,0.25)]
+        cursor-pointer
+        bg-black
+        border
+        border-red-600
+        rounded-lg
+        text-red-500
+        hover:bg-red-600
+        hover:border-red-400
+        hover:text-white
+        hover:shadow-[0_0_12px_rgba(239,68,68,0.25)]
+        hover:scale-105
+        transition-all
+        duration-300">
+        <span>AUDIO ON</span>
+        <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <p>VER. 2.0.6-ACTIVE</p>
+        </div>       
+       
+    </header>
+    <!-- ========================= -->
+<!-- RESULT POPUP -->
+<!-- ========================= -->
+
+<section id="result-popup" class="popup hidden">
+
+    <div class="popup-card">
+
+        <h2 id="popup-title">
+
+            PLAYER WINS
+
+        </h2>
+
+        <p id="popup-message">
+
+            Great Job!
+
+        </p>
+
+        <div class="popup-buttons">
+
+            <button id="play-again-btn">
+
+                PLAY AGAIN
+
+            </button>
+
+            <button id="menu-btn">
+
+                MAIN MENU
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+    <main class="min-h-screen bg-black text-white relative overflow-hidden">
+
+    <!-- ========================= -->
+    <!-- GLOBAL BACKGROUND -->
+    <!-- ========================= -->
+
+    <div class="grid-bg"></div>
+
+    <div class="scan-line"></div>
+
+    <div class="orb orb1"></div>
+
+    <div class="orb orb2"></div>
+
+
+    <!-- ========================= -->
+    <!-- LOADING SCREEN -->
+    <!-- ========================= -->
+
+    <section id="loading-screen" class="hidden">
+
+        <h2 class="loading-title">
+            INITIALIZING AI...
+        </h2>
+
+        <div class="loading-bar">
+
+            <div class="loading-progress"></div>
+
+        </div>
+
+        <p class="loading-text">
+            CONNECTING TO NEON GRID
+        </p>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- LANDING PAGE -->
+    <!-- ========================= -->
+
+    <section id="landing-page" class="relative z-10">
+
+        <!-- HERO -->
+
+        <section class="flex flex-col items-center justify-center text-center pt-24 px-6">
+
+            <p class="tracking-[8px] text-red-500 text-sm uppercase mb-4">
+
+                SYSTEM STATUS : ONLINE
+
+            </p>
+
+            <h2 class="text-6xl md:text-8xl lg:text-9xl font-black neon-title uppercase">
+
+                Tic Tac Toe
+
+            </h2>
+
+            <p class="text-gray-400 mt-10 max-w-xl leading-8">
+
+                Adaptive Artificial Intelligence.
+
+                Challenge yourself against the NEON GRID.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- GAME MODE -->
+
+        <section class="mt-16">
+
+            <h3 class="text-center text-red-500 text-2xl tracking-[8px] uppercase mb-10">
+
+                Choose Game Mode
+
+            </h3>
+
+            <div class="flex flex-wrap justify-center gap-8">
+
+                <!-- EASY -->
+
+                <div class="mode-card" data-mode="easy">
+
+                    <div class="mode-status">
+
+                        ● ONLINE
+
+                    </div>
+
+                    <h2>EASY AI</h2>
+
+                    <p>
+
+                        Perfect for beginners.
+
+                        <br>
+
+                        AI makes occasional mistakes.
+
+                    </p>
+
+                </div>
+
+                <!-- HARD -->
+
+                <div class="mode-card" data-mode="hard">
+
+                    <div class="mode-status">
+
+                        ● ONLINE
+
+                    </div>
+
+                    <h2>HARD AI</h2>
+
+                    <p>
+
+                        Smart AI.
+
+                        <br>
+
+                        Can you beat it?
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-center my-10 text-gray-500 tracking-[5px]">
+
+                OR
+
+            </div>
+
+
+            <div class="flex justify-center">
+
+                <div class="mode-card friend-card" data-mode="friend">
+
+                    <div class="mode-status">
+
+                        ● LOCAL
+
+                    </div>
+
+                    <h2>PLAY WITH FRIEND</h2>
+
+                    <p>
+
+                        Two players.
+
+                        <br>
+
+                        Same device.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- START BUTTON -->
+<section class="flex justify-center mt-16 mb-8">
+
+            <button id="start-btn" class="play-btn">
+
+                START GAME
+
+            </button>
+
+        </section>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- GAME PAGE -->
+    <!-- ========================= -->
+
+    <section id="game-page" class="hidden relative z-10">
+
+        <div class="game-container">
+
+            <div class="game-top">
+
+                <button id="back-btn">
+
+                    ← MAIN MENU
+
+                </button>
+
+                <div class="game-info">
+
+                    <h2 id="game-mode">
+
+                        EASY AI
+
+                    </h2>
+
+                    <p id="turn-text">
+
+                        YOUR TURN
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BOARD -->
+            
+            <div class="board-wrapper">
+
+            
+                <canvas id="win-canvas"></canvas>
+            
+                <div class="board">
+
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            
+            <div id="win-line"></div>
+
+            <!-- SCORE -->
+
+            <div class="scoreboard">
+
+    <div>
+
+        <p id="left-label">PLAYER</p>
+
+        <span id="player-score">0</span>
+
+    </div>
+
+    <div>
+
+        <p id="right-label">AI</p>
+
+        <span id="ai-score">0</span>
+
+    </div>
+
+</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+    <footer>
+     <footer class="footer">
+
+    <p class="footer-title">
+        CREATED BY
+    </p>
+
+    <h3 class="footer-name">
+        AAMIT BARAN PATTANAYAK
+    </h3>
+
+    <a
+        href="https://www.linkedin.com/in/aamit-baran-pattanayak-2a879931a/"
+        target="_blank"
+        class="footer-link"
+    >
+        <i class="fa-brands fa-linkedin"></i>
+        LinkedIn ↗
+    </a>
+
+</footer>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>

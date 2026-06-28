@@ -573,7 +573,7 @@ function drawWinningLine(combo){
     ctx.shadowBlur = 20;
     ctx.shadowColor = "#ff1744";
 
-    // We'll calculate start/end points based on combo
+    // Will calculate start/end points based on combo
 }
 
 

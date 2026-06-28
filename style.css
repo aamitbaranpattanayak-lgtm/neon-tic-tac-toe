@@ -816,3 +816,130 @@
 .footer{
     margin-top:100px;
 }
+
+
+/* RESPONSIVE DESIGN*/
+
+
+/* ---------- Tablets ---------- */
+@media (max-width:768px){
+
+    .logo{
+        font-size:22px;
+    }
+
+    .friend-card{
+        width:90%;
+    }
+
+    .game-top{
+        flex-direction:column;
+        gap:20px;
+        text-align:center;
+    }
+
+    .game-info{
+        text-align:center;
+    }
+
+    .board{
+        grid-template-columns:repeat(3,100px);
+        gap:10px;
+    }
+
+    .cell{
+        width:100px;
+        height:100px;
+        font-size:45px;
+    }
+
+    .board-wrapper{
+        width:320px;
+        height:320px;
+    }
+
+    .loading-bar{
+        width:90%;
+    }
+
+    .scoreboard{
+        gap:40px;
+        font-size:18px;
+    }
+
+    .scoreboard span{
+        font-size:28px;
+    }
+
+    .popup-card{
+        width:90%;
+        padding:30px;
+    }
+
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width:480px){
+
+    .logo{
+        font-size:18px;
+    }
+
+    .mode-card{
+        width:90%;
+        padding:25px;
+    }
+
+    .friend-card{
+        width:90%;
+    }
+
+    .board{
+        grid-template-columns:repeat(3,80px);
+        gap:8px;
+    }
+
+    .cell{
+        width:80px;
+        height:80px;
+        font-size:34px;
+    }
+
+    .board-wrapper{
+        width:256px;
+        height:256px;
+    }
+
+    .loading-title{
+        font-size:28px;
+        text-align:center;
+    }
+
+    .loading-text{
+        font-size:12px;
+        text-align:center;
+    }
+
+    .loading-bar{
+        width:90%;
+    }
+
+    .game-info h2{
+        font-size:24px;
+    }
+
+    .scoreboard{
+        gap:25px;
+        font-size:16px;
+    }
+
+    .scoreboard span{
+        font-size:24px;
+    }
+
+    .popup-card{
+        width:90%;
+        padding:20px;
+    }
+
+}

@@ -6,7 +6,7 @@ A futuristic cyberpunk-themed Tic-Tac-Toe game built using **HTML, CSS, Tailwind
 
 ## 🚀 Live Demo
 
-🔗 https://your-vercel-link.vercel.app
+🔗 [https://your-vercel-link.vercel.app](https://neon-tic-tac-toe-one.vercel.app/)
 
 ---
 
@@ -89,12 +89,6 @@ Neon-Tic-Tac-Toe/
 
 - Two players
 - Local multiplayer
-
----
-
-## 📸 Screenshots
-
-(Add screenshots here)
 
 ---
 
